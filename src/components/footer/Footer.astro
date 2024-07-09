@@ -1,0 +1,78 @@
+---
+const currentYear = new Date().getFullYear()
+
+---
+
+<footer class="footer w-full xl:w-[1120px] fixed bottom-0" data-glow >
+    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© {currentYear} All Rights Reserved.
+    </span>
+
+    <ul class="flex flex-row gap-x-10 opacity-80">
+        <li>
+            <a href="/">Home</a>
+        </li>
+        <li>
+            <a href="/experience">Experiencia</a>
+        </li>
+        </li>
+        <li>
+            <a href="/about">Sobre mi</a>
+        </li>
+        <li>
+            <a href="/projects">Projects</a>
+        </li>
+        <li>
+            <a href="/contactos">Contact</a>
+        </li>
+    </ul>
+    </div>
+</footer>
+
+
+<style  is:global>
+  .footer {
+    background-color: #050505a0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+    pointer-events: none; /* Evita que el footer sea interactivo cuando está oculto */
+  }
+  .footer.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto; /* Habilita la interactividad cuando el footer es visible */
+  }
+  .footer {
+      background-color: #050505a0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s, transform 0.5s;
+      pointer-events: none; /* Evita que el footer sea interactivo cuando está oculto */
+    }
+    .footer.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto; /* Habilita la interactividad cuando el footer es visible */
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const footer = document.querySelector('.footer');
+      const currentYear = new Date().getFullYear();
+
+      function checkScroll() {
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+          footer.classList.add('visible');
+        } else {
+          footer.classList.remove('visible');
+        }
+      }
+
+      window.addEventListener('scroll', checkScroll);
+      window.addEventListener('resize', checkScroll);
+      checkScroll(); // Initial check in case the page is already scrolled to the bottom
+    });
+  </script>
+  

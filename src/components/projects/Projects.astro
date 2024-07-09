@@ -1,0 +1,175 @@
+---
+import Css from "../icons/Css.astro"
+import GitHub from "../icons/Github.astro"
+import Javascript from "../icons/Javascript.astro"
+import NextJS from "../icons/NextJS.astro"
+import Tailwind from "../icons/Tailwind.astro"
+import Html from "../icons/Html.astro"
+import Wordpress from "../icons/Wordpress.astro"
+import WorldWeb from "../icons/WorldWeb.astro"
+import Hubspot from "../icons/Hubspot.astro"
+import LinkButton from "../linkButton/LinkButton.astro"
+import React from "../icons/React.astro"
+import AstroIcon from "../icons/Astro.astro"
+import Typescript from "../icons/Typescript.astro"
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJS,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  JAVASCRIPT: {
+    name: "Javascript",
+    class: "bg-[#FBFF00] text-black",
+    icon: Javascript,
+  },
+  HTML: {
+    name: "HTML5",
+    class: "bg-[#003159] text-white",
+    icon: Html,
+  },
+  CSS: {
+    name: "css3",
+    class: "bg-[#003159] text-white",
+    icon: Css,
+  },
+  WORDPRESS: {
+    name: "Wordpress",
+    class: "bg-[#003159] text-white",
+    icon: Wordpress,
+  },
+  HUBSPOT: {
+    name: "HubSpot",
+    class: "bg-[#003159] text-white",
+    icon: Hubspot,
+  },
+  REACT: {
+    name: "React",
+    class: "bg-[#018eb5] text-white",
+    icon: React,
+  },
+  ASTRO: {
+    name: "Astro",
+    class: "bg-[#13151a] text-white",
+    icon: AstroIcon,
+  },
+  TYPESCRIPT: {
+    name: "Astro",
+    class: "bg-[#13151a] text-white",
+    icon: Typescript,
+  }
+}
+
+
+const PROJECTS = [
+  {
+    title: "Lorem ipsum",
+    description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste illum corporis aliquid impedit. Laudantium, itaque iste.",
+    link: "https://cscrazy.com/",
+    image: "public/projects/project-1.png",
+    tags: [TAGS.JAVASCRIPT, TAGS.ASTRO],
+    github: "",
+  },
+  {
+    title: "Lorem ipsum",
+    description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste illum corporis aliquid impedit. Laudantium, itaque iste.",
+    link: "https://ceas.pe/",
+    image: "public/projects/project-2.png",
+    tags: [TAGS.JAVASCRIPT, TAGS.ASTRO],
+    github: "",
+  },
+  {
+    title: "Lorem ipsum",
+    description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste illum corporis aliquid impedit. Laudantium, itaque iste.",
+    link: "https://www.ludusperu.org.pe/",
+    image: "public/projects/project-3.png",
+    tags: [TAGS.JAVASCRIPT, TAGS.ASTRO],
+    github: "",
+  },
+]
+PROJECTS.map(({tags}) => (
+  console.log(tags)
+))
+---
+
+<section class="flex flex-row gap-y-16 gap-x-5 flex-wrap justify-center md:justify-between">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+      <article class="max-w-sm flex flex-col justify-between max-h-full h-full">
+      <div class="media-project card">
+        <ul class="flex gap-x-2 flex-row mb-2">
+          {tags && tags.map((tag) => (
+            <li >
+              <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <figure class="img-project aspect-video h-[216px]">
+        <img
+          loading="lazy"
+          class="rounded shadow-2xl shadow-white/10 aspect-video object-cover imgProject max-w-[380px] w-full h-[216px]"
+          src={image}
+          alt={`Captura de pantalla del proyecto ${image}`}
+        />
+        </figure>
+        <div class="text-project p-[16px]">
+        <h3 class="text-2xl font-semibold text-yellow-800 dark:text-yellow-200 mb-2">
+          {title}
+        </h3>
+        <p class="text-lg mb-4 text-pretty">{description}</p>
+      </div>
+        <footer class="flex gap-x-4 items-end justify-start mt-auto">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-6" />
+              Ver código fuente
+            </LinkButton>
+          )}
+          <LinkButton href={link}>
+            <WorldWeb />
+            Ir al sitio web
+          </LinkButton>
+        </footer>
+        </div>
+      </article>
+    ))
+  }
+</section>
+
+<style>
+    .card {
+    display: flex;
+    flex-direction: column;
+    height:540px; /* Hace que todas las cards tengan la misma altura */
+  }
+
+  .img-project {
+    overflow: hidden; /* Asegura que la imagen no se salga de la caja al escalar */
+    display: inline-block; /* Asegura que el figure no se expanda más de lo necesario */
+  }
+
+  .imgProject {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Añade una transición suave */
+    display: block; /* Asegura que la imagen ocupe todo el espacio dentro del figure */
+  }
+
+  .img-project:hover .imgProject {
+    transform: scale(1.1);
+  }
+  article:hover .img-project {
+    box-shadow: -6px 6px #FBFF00;
+    border-radius: 2px;
+  }
+  article:hover .imgProject {
+    transform: scale(1.1);
+  }
+</style>

@@ -1,0 +1,40 @@
+---
+
+---
+<header class="flex justify-between items-center py-5 px-[15px] md:px-[80px] w-full xl:w-[1120px]">
+  <div class="text-lg font-bold">‹/Richard Gonzalez›</div>
+  <nav class="hidden md:flex flex-row gap-x-10 opacity-80">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/experience">Experience</a>
+    <a href="/projects">Projects</a>
+    <a href="/contactos">Contact</a>
+  </nav>
+  <button id="menu-toggle" class="md:hidden flex items-center px-3 py-2 border rounded text-gray-800 border-gray-800 hover:text-gray-700 hover:border-gray-700">
+    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <title>Menu</title>
+      <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+    </svg>
+  </button>
+</header>
+
+<!-- Mobile Menu -->
+<nav id="mobile-menu" class="hidden md:hidden flex flex-col gap-y-4 bg-gray-100 p-4 h-dvh w-full">
+  <a class="text-blue-600 font-semibold" href="/">Home</a>
+  <a class="text-blue-600 font-semibold" href="/about">Sobre mi</a>
+  <a class="text-blue-600 font-semibold" href="/experience">Experiencia</a>
+  <a class="text-blue-600 font-semibold" href="/projects">Projects</a>
+  <a class="text-blue-600 font-semibold" href="/contactos">Contact</a>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', function () {
+      mobileMenu.classList.toggle('hidden');
+    });
+  });
+</script>
+
