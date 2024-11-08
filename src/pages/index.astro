@@ -1,93 +1,86 @@
 ---
-import AboutMe from '../components/aboutMe/AboutMe.astro'
-import AboutMeIcon from '../components/icons/About.astro'
-import Badge from '../components/badge/Badge.astro'
-import CodeIcon from '../components/icons/Code.astro'
-import ContactosIcon from '../components/icons/Contactos.astro'
-import Contact from '../components/contactos/Contactos.astro'
-import Experience from '../components/experience/Experience.astro'
-import Layout from '../layouts/Layout.astro'
-import GithubIcon from '../components/icons/Github.astro'
-import LikedinIcon from '../components/icons/Linkedin.astro'
-import SocialPill from '../components/socialPill/SocialPill.astro'
-import YoutubeIcon from '../components/icons/Youtube.astro'
-import MailIcon from '../components/icons/Mail.astro'
-import Projects from '../components/projects/Projects.astro'
-import SectionContainer from '../components/sectionContainer/SectionContainer.astro'
-import TrabajosIcon from '../components/icons/Trabajos.astro'
-import AccordionBox from '../components/accordion/Accordion.astro'
-import Popup from '../components/popup/Popup.astro'
-
+import AboutMe from "../components/aboutMe/AboutMe.astro";
+import AboutMeIcon from "../components/icons/About.astro";
+import Badge from "../components/badge/Badge.astro";
+import CodeIcon from "../components/icons/Code.astro";
+import ContactosIcon from "../components/icons/Contactos.astro";
+import Contact from "../components/contactos/Contactos.astro";
+import Experience from "../components/experience/Experience.astro";
+import Layout from "../layouts/Layout.astro";
+import GithubIcon from "../components/icons/Github.astro";
+import LikedinIcon from "../components/icons/Linkedin.astro";
+import SocialPill from "../components/socialPill/SocialPill.astro";
+import YoutubeIcon from "../components/icons/Youtube.astro";
+import MailIcon from "../components/icons/Mail.astro";
+import Projects from "../components/projects/Projects.astro";
+import SectionContainer from "../components/sectionContainer/SectionContainer.astro";
+import TrabajosIcon from "../components/icons/Trabajos.astro";
+import AccordionBox from "../components/accordion/Accordion.astro";
+import Popup from "../components/popup/Popup.astro";
 ---
 
-<Layout 
-title="Portfolio - Richard Gonzalez | Desarrollador web"
-description="Desarrollador y Programador web"
+<Layout
+  title="Portfolio - Richard Gonzalez | Desarrollador web"
+  description="Desarrollador y Programador web"
 >
-	<main class="px-4">
-		<!-- <Popup id="asd" paragraph="asdqwerty" open="true" /> -->	
-		<SectionContainer id="about" class="flex flex-col justify-center items-center md:items-start w-full lg:w-[740px] mx-auto py-32 pb-24">
+  <main class="px-4">
+    <!-- <Popup id="asd" paragraph="asdqwerty" open="true" /> -->
+    <SectionContainer
+      id="about"
+      class="flex flex-col justify-center items-center md:items-start w-full lg:w-[740px] mx-auto py-32 pb-24"
+    >
+      <img
+        class="rounded-full size-12 mb-4"
+        src="./public/foto.png"
+        alt="foto de perfil"
+      />
+      <h1
+        class="text-white text-2xl md:text-3xl lg:text-5xl font-bold flex justify-start flex-row gap-x-4 pb-4"
+      >
+        Hola, soy Richard González
+        <div class="flex justify-center items-end">
+          <a
+            href="https://www.linkedin.com/in/richard-gonzalez-full-stack/"
+            target="_blank"
+            rel='noopener"'
+            class="flex justify-center items-center"
+          >
+            <Badge> Contáctame </Badge></a
+          >
+        </div>
+      </h1>
+      <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+        Desarrollador web FULL STACK con
+        <span class="text-yellow-200/90"> +10 años de experiencia, </span>
+        <ul>
+          <li> Programación de aplicaciones web con frameworks como Codeigniter o Laravel.</li>
+		  <li>API Restfull</li>
+		  <li>Páginas web administrables con posicionamiento SEO</li>
+		  <li>Sistemas informaticos</li>
+		  <li>Conexión a bases de datos MySql o Postgres</li>
+		  <li>Migraciones de páginas Web</li>
+		  <li>Entre otras soluciones informaticas</li>
+        </ul>
 
-			<img 
-				class="rounded-full size-12 mb-4" 
-				src="./public/foto.png" 
-				alt="foto de perfil">
-			<h1 class="text-white text-2xl md:text-3xl lg:text-5xl font-bold flex justify-start flex-row gap-x-4 pb-4">
-				Hola, soy Richard gonzalez 
-				<div class="flex justify-center items-end">
-					<a 
-					href="https://www.linkedin.com/in/andres-gutierrez-developer/" 
-					target="_blank" 
-					rel=noopener"
-					class="flex justify-center items-center">
-					<Badge>
-						Contáctame
-					</Badge></a>
-				</div>
-			</h1>
-			<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
-				Desarrollador web  
-				<span class="text-yellow-200/90">
-					+Xaños de experiencia.
-				</span> 
-				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error repellat perspiciatis autem animi aliquam.
-				<span class="text-blue-200/90">
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-				</span>
-			</h2>
-				<nav class="flex justify-center md:justify-start gap-4 mt-4 flex-wrap">
-					<SocialPill	href="https://www.linkedin.com/in/richard-gonzalez-a5b812231/" >
-						<LikedinIcon 
-						class="size-4 lg:size-5"
-						/>
-					Linkedin
-					</SocialPill>
-					<SocialPill
-					href="" 
-					>
-					<GithubIcon 
-					class="size-4 lg:size-5" />
-					GitHub
-					</SocialPill>
-					<SocialPill
-					href="" 
-					>
-					<YoutubeIcon 
-					class="size-4 lg:size-5" />
-					YouTube
-					</SocialPill>
-					<SocialPill
-					href="mailto:@gmail.com" 
-					>
-					<MailIcon 
-					class="size-4 lg:size-5" />					
-					Gmail
-					</SocialPill>
-				</nav>
-
-
-		</SectionContainer>
-		<!-- <SectionContainer id="experiencia" >
+      </h2>
+      <nav class="flex justify-center md:justify-start gap-4 mt-4 flex-wrap">
+        <SocialPill
+          href="https://www.linkedin.com/in/richard-gonzalez-full-stack/"
+        >
+          <LikedinIcon class="size-4 lg:size-5" />
+          Linkedin
+        </SocialPill>
+        <SocialPill href="https://github.com/launchzor">
+          <GithubIcon class="size-4 lg:size-5" />
+          GitHub
+        </SocialPill>
+        <SocialPill href="mailto:iutar.richard.gonzalez@gmail.com">
+          <MailIcon class="size-4 lg:size-5" />
+          Gmail
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+    <!-- <SectionContainer id="experiencia" >
 			<h2 class="flex gap-3 items-center text-2xl font-semibold mb-6">
 				<TrabajosIcon />
 				Formacion laboral
@@ -115,9 +108,7 @@ description="Desarrollador y Programador web"
 			</h2>
 			<Contact />
 		</SectionContainer> -->
-	</main>
+  </main>
 </Layout>
 
-<style>
-	
-</style>
+<style></style>
